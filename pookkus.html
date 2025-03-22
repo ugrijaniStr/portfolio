@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Animation</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #282c34;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .typing {
+      display: inline-block;
+      border-right: 2px solid white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing" id="typingText"></div>
+
+  <script>
+    // Tekst koji treba da se "otkuca"
+    const text = "Ovo je animacija tipkanja u JavaScript-u!";
+    const element = document.getElementById('typingText');
+    let i = 0;
+
+    // Funkcija za tipkanje
+    function typeWriter() {
+      element.innerHTML = ''; // Brišemo tekst pre početka
+      i = 0;  // Resetujemo indeks
+      function typing() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, 100);  // Povećaj broj ako želiš da se tipka brže
+        }
+      }
+      typing(); // Pokrećemo tipkanje
+
+      // Ponavljamo animaciju svakih 4 sekunde (koliko traje otkucavanje)
+      setTimeout(typeWriter, text.length * 100 + 1000);
+    }
+
+    // Pokretanje funkcije za tipkanje
+    typeWriter();
+  </script>
+
+</body>
+</html>

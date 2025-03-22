@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 :root {
     --bgColor: rgba(26,27,30,255);
     --glowColor: rgba(111, 50, 255, 0.685);
@@ -45,7 +48,7 @@ body {
 .navItems {
     height: 100%;
     font-size: 1.2rem;
-    font-family: arial;
+    font-family: 'Poppins', sans-serif;
     color: var(--textColor);
     &:first-child{
         width: 40%;
@@ -231,6 +234,17 @@ body {
     }
 }
 
+.titleArea {
+    width: 100%;
+    height: 30%;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Asap", sans-serif;
+    margin-bottom: 5%;
+}
+
 .infoBox {
     width: 100%;
     height: 40%;
@@ -262,6 +276,7 @@ body {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10%;
 }
 
 .skillsItems {
@@ -389,6 +404,14 @@ footer {
     height: 100%;
     position: relative;
     background: var(--bgColor);
+}
+
+#typingX, #typingY {
+    font-weight: 600;
+    background: linear-gradient(45deg, #6730ff, #8fcefd);
+    -webkit-background-text: clip;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes glowing {

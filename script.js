@@ -1,41 +1,37 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+sleep = (ms) => {return new Promise(resolve => setTimeout(resolve, ms));}
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+let i = 0;
 
-renderer.setSize(window.innerWidthm, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-const light = new THREE.AmbientLight(0x404040);
-scene.add(light);
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-scene.add(directionalLight);
-
-camera.position.z = 5;
-
-const loader = new GLTFLoader();
-
-loader.load(
-    'planet_earth.glb',
-    (gltf) => {
-      scene.add(gltf.scene);
-    },
-    (xhr) => {
-      console.log((xhr.loaded / xhr.total) * 100 + '% učitano');
-    },
-    (error) => {
-      console.error('Greška pri učitavanju modela:', error);
-    }
-  );
+async function typingText(x,y) {
+  let contentX = x;
+  let contentY = y;
+  let elemX = document.getElementById('typingX');
+  let elemY = document.getElementById('typingY');
   
+  while (true) {
+    elemX.innerHTML = '';
+    elemY.innerHTML = '';
 
-function animate() {
-requestAnimationFrame(animate);
+    for(i = 0; i <= contentX.length - 1; i++) {
+      await sleep(200);
+      elemX.innerText += contentX[i];
+    }
 
-renderer.render(scene, camera);
+    for(j = 0; j <= contentY.length -1; j++) {
+      await sleep(200);
+      elemY.innerText += contentY[j];
+    }
+
+    await sleep(1000);
+
+    for(i = contentX.length - 1; i >= 0; i--) {
+      await sleep(100);
+      elemX.innerText = contentX.substring(0, i);
+    }
+
+    for(j = contentY.length - 1; j >= 0; j--) {
+      await sleep(100);
+      elemY.innerText = contentY.substring(0, j);
+    }
+  }
 }
-
-animate();

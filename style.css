@@ -288,6 +288,16 @@ body {
     }&:nth-child(2) {
         width: 50%;
         height: 65%;
+        display: grid;
+        place-items: center;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 25vw;
+            height: 25vw;
+            border: 20px solid rgba(0, 0, 0, 0.116);
+            border-radius: 50%;
+        }
     }&:last-child {
         width: 100%;
         height: 35%;
@@ -295,6 +305,52 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         padding: 3% 0 0 5%;
+    }
+}
+
+.skillItemBox {
+    width: 63%;
+    height: 100%;
+}
+
+.skillItemChild {
+    width: 100%;
+    &:nth-child(1) {
+        height: 20%;
+        display: grid;
+        place-items: center;
+        font-size: 8rem;
+        color: rgb(64,172,204);
+        & i {
+            transform: skew(-10deg);
+        }
+    }&:nth-child(2) {
+        height: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        & div {
+            height: 100%;
+            width: 50%;
+            position: relative;
+            &:first-child {
+                display: flex;
+                align-items: center;
+                font-size: 6rem;
+                color: yellow;
+                animation: movingAnimation 3s linear 2s infinite alternate;
+                transform: rotate(10deg);
+            }&:last-child {
+                display: flex;
+                align-items: flex-end;
+                justify-content: end;
+                font-size: 10rem;
+                color: rgb(158,220,236);
+                transform: rotate(-5deg);
+                animation: movingAnimation 5s linear 2s infinite alternate;
+            }
+        }
+    }&:nth-child(3) {
+        height: 30%;
     }
 }
 
@@ -442,6 +498,11 @@ footer {
     }
   }
 
+@keyframes movingAnimation {
+    0% {top: -10%;}
+    50% {top: 0%}
+    100% {top: -10%};
+}
 
 ::-webkit-scrollbar {
     width: 6px;

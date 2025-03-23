@@ -402,6 +402,8 @@ body {
     transform: skew(5deg);
     box-shadow: 0 0 200px -30px var(--glowColor);
     border-radius: 10px;
+    position: relative;
+    animation: movingAnimation 5s linear 2s infinite alternate;
     & div:nth-child(1) {
         padding: 0 0 0 1%;
         width: 100%;
@@ -436,6 +438,9 @@ body {
     height: 100%;
     &:first-child {
         width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &::after {
             content: '';
             position: relative;
@@ -443,7 +448,7 @@ body {
             height: 1px;
             box-shadow: 0 0 340px 50px var(--glowColor);
             display: flex;
-            right: 50%;
+            right: 90%;
             top: 30%;
         }
     }&:last-child {
@@ -463,6 +468,16 @@ body {
             left: 50%;
         }
     }
+}
+
+.pathBox {
+    width: 70%;
+    height: 90%;
+    background: var(--boxColor);
+    transform: skewX(3deg);
+    box-shadow: 0 0 200px -29px var(--glowColor);
+    border-radius: 8px;
+    position: relative;
 }
 
 .workBox {

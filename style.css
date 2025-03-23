@@ -480,6 +480,83 @@ body {
     position: relative;
 }
 
+.pathNav {
+    width: 100%;
+    height: 20%;
+    display: block;
+}
+
+.pathTitle {
+    padding: 0 0 0 1%;
+    width: 100%;
+    height: 30%;
+    background: rgb(54, 54, 54);
+    display: flex;
+    align-items: center;
+    color: var(--fontColor);
+    font-family: 'Asap',sans-serif;
+    font-size: 1.1rem;
+}
+
+.pathContent {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    & div:first-child {
+        height: 100%;
+        width: 70%;
+        padding: 2%;
+        font-family: arial;
+        & h1 {
+            color: var(--fontColor);
+            margin-bottom: 1%;
+        } p {
+           color: var(--textColor); 
+           margin-bottom: 2%;
+        }
+    }& div:last-child {
+        height: 100%;
+        width: 30%;
+    }
+}
+
+.pathWorks {
+    width: 100%;
+    height: 80%;
+    display: block;
+    padding: 2%;
+}
+
+.pathItems {
+    width: 100%;
+    height: 10%;
+    margin-bottom: 2%;
+    border-radius: 8px;
+    background: rgba(32, 32, 32, 0.274);
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    padding: 0 0 0 3%;
+    &:hover {
+        background: rgba(255, 255, 255, 0.021);
+    }
+}
+
+.moreBtn {
+    width: 30%;
+    height: 40%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.082), rgba(0, 0, 0, 0.24));
+    color: var(--fontColor);
+    font-weight: bold;
+}
+
 .workBox {
     width: 90%;
     height: 30%;

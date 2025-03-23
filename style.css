@@ -390,6 +390,8 @@ body {
     }
     &:nth-child(even) {
         width: 20%;
+    }&:hover {
+        transform: scale(1.06);
     }
 }
 
@@ -476,6 +478,9 @@ body {
     flex-wrap: wrap;
     & > div {
         height: 100%;
+    }&:hover {
+        background: rgba(27, 27, 27, 0.116);
+        transform: scale(1.03);
     }
 }
 

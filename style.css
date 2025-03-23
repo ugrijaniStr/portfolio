@@ -431,9 +431,9 @@ body {
 }
 
 .projectsBoxChild {
-    width: 50%;
     height: 100%;
     &:first-child {
+        width: 60%;
         &::after {
             content: '';
             position: relative;
@@ -441,9 +441,16 @@ body {
             height: 1px;
             box-shadow: 0 0 340px 50px var(--glowColor);
             display: flex;
-            top: 90%;
+            right: 50%;
+            top: 30%;
         }
     }&:last-child {
+        width: 40%;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4%;
         &::before {
             content: '';
             position: relative;
@@ -451,8 +458,86 @@ body {
             height: 1px;
             box-shadow: 0 0 500px 70px var(--glowColor);
             display: flex;
-            left: 95%;
+            left: 50%;
         }
+    }
+}
+
+.workBox {
+    width: 90%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.062);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    position:relative;
+    z-index: 4;
+    box-shadow: 0 1px 15px 0px rgba(0, 0, 0, 0.301);
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+        height: 100%;
+    }
+}
+
+.workDateBox {
+    width: 30%;
+    display: grid;
+    place-items: center;
+    color: var(--textColor);
+    font-size: 5rem;
+}
+
+.workContentBox {
+    width: 70%;
+    & > .workContentText, workContentLangs {
+        width: 100%;
+    }
+}
+
+.workContentText {
+    height: 70%;
+    padding: 2%;
+    & h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 1000;
+        color: var(--fontColor);
+        font-size: 1.7rem;
+    } & p {
+        font-family: 'Asap', sans-serif;
+        color: var(--textColor);
+    }
+}
+
+.workContentLangs {
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10% 0 2%;
+}
+
+.workLangsItem {
+    height: 50%;
+    background: rgba(149, 35, 255, 0.171);
+    color: var(--fontColor);
+    font-family: arial;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    &:first-child {
+        width: 20%;
+    }&:nth-child(2) {
+        width: 25%;
+    }&:nth-child(3) {
+        width: 30%;
+    }&:last-child {
+        width: 20%;
+    }&:hover {
+        background: rgba(149, 35, 255, 0.568);
+        box-shadow: 0 0 10px -2px var(--glowColor);
     }
 }
 
